@@ -33,5 +33,5 @@ def read():
             break
     print(result)
 
-#if __name__ == "__main__":
-#    app.run()
+if __name__ == "__main__":
+    app.run()
