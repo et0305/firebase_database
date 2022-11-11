@@ -16,7 +16,7 @@ def index():
     return homepage
 
 @app.route("/read_firebase", methods=["GET", "POST"])
-def read():
+def read_firebase():
     cond = request.form["course"]
     db = firestore.client()
     collection_ref = db.collection("111")
