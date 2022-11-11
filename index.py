@@ -17,11 +17,12 @@ def index():
 
 @app.route("/read_firebase", methods=["GET", "POST"])
 def read_firebase():
+    return render_template("read_firebase.html")
     if request.method == "POST":
         cond = request.form["course"]
-        return result
+        teacher = request.form["teacher"]
     else:
-        return render_template("account.html")
+        return render_template("read_firebase.html")
     db = firestore.client()
     collection_ref = db.collection("111")
     docs = collection_ref.get()
