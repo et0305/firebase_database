@@ -26,7 +26,8 @@ def read_firebase():
     return resultpage
 
 @app.route("/resultpage")
-db = firestore.client()
+def resultpage():
+    db = firestore.client()
     collection_ref = db.collection("111")
     docs = collection_ref.get()
     result = ""
