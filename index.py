@@ -32,3 +32,6 @@ def read():
             result += "抱歉，查無相關條件的選修課程"
             break
     print(result)
+
+#if __name__ == "__main__":
+#    app.run()
