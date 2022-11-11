@@ -12,12 +12,12 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     homepage = "<h1>曾子宇Python讀取Firestore</h1>"
-    homepage += "<br><a href=/read>讀取Firestore資料</a><br>"
+    homepage += "<br><a href=/read_firebase>讀取Firestore資料</a><br>"
     return homepage
 
-@app.route("/read")
+@app.route("/read_firebase", methods=["GET", "POST"])
 def read():
-    cond  = input("請輸入您要查詢的課程關鍵字：")
+    cond = request.form["course"]
     db = firestore.client()
     collection_ref = db.collection("111")
     docs = collection_ref.get()
@@ -33,5 +33,5 @@ def read():
             break
     print(result)
 
-if __name__ == "__main__":
-    app.run()
+#if __name__ == "__main__":
+    #app.run()
