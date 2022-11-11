@@ -23,7 +23,10 @@ def read_firebase():
         teacher = request.form["teacher"]
     else:
         return render_template("read_firebase.html")
-    db = firestore.client()
+    return resultpage
+
+@app.route("/resultpage")
+db = firestore.client()
     collection_ref = db.collection("111")
     docs = collection_ref.get()
     result = ""
